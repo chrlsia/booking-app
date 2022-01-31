@@ -21,11 +21,7 @@ func main() {
 
 		if isValidName && isValidEmail && isValidTickerNumber {
 
-			remainingTickets = remainingTickets - userTickets
-			bookings = append(bookings, firstName+" "+lastName)
-
-			fmt.Printf("Thank you %v %v for booking %v tickets. You will receive a confirmation email at %v\n", firstName, lastName, userTickets, email)
-			fmt.Printf("%v tickets remained for %v\n", remainingTickets, conferenceName)
+			//bookTicket()
 
 			firstNames:=getFirstNames(bookings)
 
@@ -92,4 +88,12 @@ func getUserInput()(string,string,string,uint){
 	fmt.Scan(&userTickets)
 
 	return firstName,lastName,email,userTickets
+}
+
+func bookTicket(){
+	remainingTickets = remainingTickets - userTickets
+	bookings = append(bookings, firstName+" "+lastName)
+
+	fmt.Printf("Thank you %v %v for booking %v tickets. You will receive a confirmation email at %v\n", firstName, lastName, userTickets, email)
+	fmt.Printf("%v tickets remained for %v\n", remainingTickets, conferenceName)
 }
