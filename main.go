@@ -34,11 +34,11 @@ func main() {
 		fmt.Println("Enter number of tickets:")
 		fmt.Scan(&userTickets)
 
-		isValidName:=len(firstName)>=2 && len(lastName)>=2
-		isValidEmail:=strings.Contains(email,"@")
-		isValidTickerNumber:=userTickets>0 && userTickets<=remainingTickets
+		isValidName := len(firstName) >= 2 && len(lastName) >= 2
+		isValidEmail := strings.Contains(email, "@")
+		isValidTickerNumber := userTickets > 0 && userTickets <= remainingTickets
 
-		if isValidName && isValidEmail && isValidTickerNumber{
+		if isValidName && isValidEmail && isValidTickerNumber {
 
 			remainingTickets = remainingTickets - userTickets
 			bookings = append(bookings, firstName+" "+lastName)
@@ -49,21 +49,21 @@ func main() {
 			firstNames := []string{}
 			for _, booking := range bookings {
 				var names = strings.Fields(booking)
-				firstNames =append(firstNames,names[0])
+				firstNames = append(firstNames, names[0])
 			}
 
 			fmt.Printf("The first names of booking are: %v\n", firstNames)
 
 			// noTicketsRemaining:=remainingTickets ==0
-			if remainingTickets ==0 {
+			if remainingTickets == 0 {
 				fmt.Println("Our conference booked out. Come again next year")
 				break
 			}
 
-		} else{
+		} else {
 			fmt.Printf("Your input data are invalid,try again\n")
 		}
-		
+
 	}
 
 }
