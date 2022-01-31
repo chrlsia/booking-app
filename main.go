@@ -63,7 +63,5 @@ func main() {
 		} else {
 			fmt.Printf("Your input data are invalid,try again\n")
 		}
-
 	}
-
 }
