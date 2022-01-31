@@ -12,9 +12,7 @@ func main() {
 	var remainingTickets uint = 50
 	var bookings []string
 
-	fmt.Printf("Welcome to our %v booking system\n", conferenceName)
-	fmt.Printf("We have total of %v tickets and %v are still available.\n", conferenceTickets, remainingTickets)
-	fmt.Println("Get your tickets here to attend")
+	greetUsers(conferenceName,conferenceTickets,remainingTickets)
 
 	for {
 		var firstName string
@@ -61,15 +59,21 @@ func main() {
 			}
 
 		} else {
-			if !isValidName{
+			if !isValidName {
 				fmt.Println("first name or last name you entered is too short")
 			}
-			if !isValidEmail{
+			if !isValidEmail {
 				fmt.Println("email address you entered doesn't contain a @ sign")
 			}
-			if !isValidTickerNumber{
+			if !isValidTickerNumber {
 				fmt.Println("number of tickets you entered is invalid")
 			}
 		}
 	}
+}
+
+func greetUsers(confName string, confTickets int, remainingTickets uint ) {
+	fmt.Printf("Welcome to our %v booking application.\n", confName)
+	fmt.Printf("We have total of %v tickets and %v are still available.\n", confTickets, remainingTickets)
+	fmt.Println("Get your tickets here to attend.")
 }
