@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 	"strings"
 )
 
@@ -89,6 +90,13 @@ func getUserInput() (string, string, string, uint) {
 
 func bookTicket(userTickets uint, firstName string, lastName string, email string) []string {
 	remainingTickets = remainingTickets - userTickets
+	//create a map for user
+	var userData=make(map[string]string)
+	userData["firstName"]=firstName
+	userData["lastName"]=email
+	userData["firstName"]=firstName
+	userData["numberOfTickets"]=strconv.FormatUint(uint64(userTickets),10)
+
 	bookings = append(bookings, firstName+" "+lastName)
 
 	fmt.Printf("Thank you %v %v for booking %v tickets. You will receive a confirmation email at %v\n", firstName, lastName, userTickets, email)
