@@ -11,7 +11,14 @@ var conferenceName = "Go conference"
 const conferenceTickets = 50
 
 var remainingTickets uint = 50
-var bookings=make([]map[string]string,0)
+var bookings=make([]userData)
+
+type userData sruct{
+	firstName string
+	lastName string
+	email string
+	numberOfTickets uint
+}
 
 
 func main() {
