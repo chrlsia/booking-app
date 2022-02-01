@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
 //package var and constants
@@ -113,6 +114,7 @@ func bookTicket(userTickets uint, firstName string, lastName string, email strin
 	return bookings
 }
 func sendTicket(userTickets uint ,firstName,lastName,email string){
+	time.Sleep(time.Second * 10)
 	var ticket = fmt.Sprintf("%v tickets for %v %v",userTickets,firstName,lastName)
 	fmt.Println("##########################")
 	fmt.Printf("Sending ticket:\n %v \nto email address %v\n",ticket,email)
